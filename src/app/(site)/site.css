@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@import "../../sections/tokens.css";
+
+/* Preview-only label overlay (toggled by the builder; never exported). */
+.q-labels [data-section-id] {
+  outline: 2px dashed #2563eb;
+  outline-offset: -2px;
+}
+.q-labels [data-section-id]:not([data-section="navbar"]) {
+  position: relative;
+}
+.q-labels [data-section-id]::before {
+  content: attr(data-section-id) " · " attr(data-variant);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  padding: 2px 8px;
+  background: #2563eb;
+  color: #fff;
+  font: 500 12px/1.5 ui-monospace, monospace;
+}
+.q-labels [data-component]:hover {
+  outline: 2px solid #f59e0b;
+  outline-offset: 2px;
+}
+.q-flash {
+  outline: 3px solid #2563eb !important;
+  outline-offset: -3px;
+}
